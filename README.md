@@ -21,9 +21,18 @@ To call the method:
 ```
 import numpy as np
 import torch
-from torchdiffeq import odeint
-
 from nice_module import NICE
+
+# Initialize NICE model
+nice_model = NICE(params_f, params_u, hidden_num, number_IC, norm_params, dim, nsvars)
+
+# Generate sample data
+t = np.linspace(0, 10, 100)
+y0 = np.zeros((10, 2))  # Initial conditions
+u = ... # strain protocol
+
+# Integrate model
+result, stress, d = nice_model.integrate(u, y0, t)
 ```
 
 odeint(func, y0, t)
@@ -66,6 +75,8 @@ If you use this code, please cite the related paper and repository:
     url={https://github.com/filippo-masi/NICE}
     
 [2] A Paszke, S Gross, S Chintala, G Chanan, E Yang, Z DeVito, Z Lin, A Desmaison, L Antiga, and A Lerer. Automatic differentiation in PyTorch. 2017.
+
 [3] R TQ Chen. `torchdiffeq`, 2018. url: [https://github.com/rtqichen/torchdiffeq](https://github.com/rtqichen/torchdiffeq).
+
 [4] R TQ Chen, Y Rubanova, J Bettencourt, and D K Duvenaud. Neural ordinary differential equations. Advances in neural information processing systems, 31, 2018. doi: 10.48550/arXiv.1806.07366.
 
