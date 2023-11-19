@@ -56,7 +56,7 @@ If you use this code, please cite the related paper and repository:
 
 [1] F Masi, I Einav (2023). "[Neural integration for constitutive equations using small data](https://doi.org/10.48550/arXiv.2311.07849)". arXiv preprint: 2311.07849.
 
-[2] F Masi, I Einav (2023), "[```NICE: Neural integration for constitutive equations```](https://github.com/filippo-masi/NICE)"
+[2] F Masi, I Einav (2023), [```NICE: Neural integration for constitutive equations```](https://github.com/filippo-masi/NICE).
 
 
     @article{masieinav2023,
@@ -64,10 +64,10 @@ If you use this code, please cite the related paper and repository:
     author={Masi, Filippo and Einav, Itai},
     journal={arXiv preprint 2311.07849},
     year={2023},
-    doi={[10.48550/arXiv.2311.07849](https://doi.org/10.48550/arXiv.2311.07849)}
+    doi={10.48550/arXiv.2311.07849}
 
     @article{masieinav2023repo,
     title={{\texttt{NICE: Neural integration for constitutive equations}}},
     author={Masi, Filippo and Einav, Itai},
     year={2023},
-    doi={[filippo-masi/NICE](https://github.com/filippo-masi/NICE)}
+    url={https://github.com/filippo-masi/NICE}
