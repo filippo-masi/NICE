@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This library provides the implementation in PyTorch of the **Neural integration for constitutive equations** (NICE) method [1]. The algorithms in this repository are implemented using `torch` [2] and `torchdiffeq` [3] libraries, thus are fully supported to run on GPU.
+This library provides the implementation in PyTorch of the **Neural Integration for Constitutive Equations (NICE)** method, see [1]. The algorithms in this repository are implemented using `torch` [2] and `torchdiffeq` [3] libraries, thus are fully supported to run on GPU.
 
 <center><img src="./_images/NICE.png"  alt="centered image" width="100%" height="51.15%"></center>
 
