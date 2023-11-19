@@ -2,22 +2,43 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+This library provides the implementation in PyTorch of the **Neural integration for constitutive equations** (NICE) method [1]. The algorithms in this repository are implemented using `torch` [2] and `torchdiffeq` [3] libraries, thus are fully supported to run on GPU.
+
 <center><img src="./_images/NICE.png"  alt="centered image" width="100%" height="51.15%"></center>
-
-## Overview
-
-This library provides the implementation in PyTorch of the **Neural integration for constitutive equations** (NICE) method [1]. The algorithms in this repository are implemented using `torch` [2] and `torchdiffeq` [3] libraries  Backpropagation through ODE solutions is supported using the adjoint method for constant memory cost. For usage of ODE solvers in deep learning applications, see reference [1].
-
-As the solvers are implemented in PyTorch, algorithms in this repository are fully supported to run on the GPU.The **NICE** (Neural Integration for Constitutive Equations) method is a novel deep learning tool for the automatic discovery of constitutive equations from small data - partial and incomplete material state observations. 
-The approach builds upon the solution of the initial value problem describing the time evolution of the material state and leverages the framework provided by neural differentials equations (Chen et al., 2018).
-NICE can learn accurate, consistent, and robust constitutive models from incomplete, sparse, and noisy data collecting simple conventional experimental protocols. 
 
 ## Features
 
-- **Neural Network Architecture**: Utilizes feed-forward artificial neural networks to model the evolution of constitutive equations.
-- **Normalization**: Implements robust data normalization techniques for enhanced training performance.
-- **ODE Integration**: Solves ordinary differential equations (ODEs) efficiently using the `torchdiffeq` library.
-- **Early Stopping**: Includes early stopping functionality to prevent overfitting during training.
+The **NICE** (Neural Integration for Constitutive Equations) method is a novel deep learning tool for the automatic discovery of constitutive equations from small data - partial and incomplete material state observations. 
+The approach builds upon the solution of the initial value problem describing the time evolution of the material state and leverages the framework provided by neural differentials equations (Chen et al., 2018).
+NICE can learn accurate, consistent, and robust constitutive models from incomplete, sparse, and noisy data collecting simple conventional experimental protocols. 
+
+## Basic usage
+
+This library provides one main interface `NICE` which contains general-material algorithms for solving the initial value problems associated with the time evolution of the material state. 
+
+To call the method:
+
+```
+import numpy as np
+import torch
+from torchdiffeq import odeint
+
+from nice_module import NICE
+```
+
+odeint(func, y0, t)
+where func is any callable implementing the ordinary differential equation f(t, x), y0 is an any-D Tensor representing the initial values, and t is a 1-D Tensor containing the evaluation points. The initial time is taken to be t[0].
+
+Backpropagation through odeint goes through the internals of the solver. Note that this is not numerically stable for all solvers (but should probably be fine with the default dopri5 method). Instead, we encourage the use of the adjoint method explained in [1], which will allow solving with as many steps as necessary due to O(1) memory usage.
+
+To use the adjoint method:
+
+from torchdiffeq import odeint_adjoint as odeint
+
+odeint(func, y0, t)
+odeint_adjoint simply wraps around odeint, but will use only O(1) memory in exchange for solving an adjoint ODE in the backward call.
+
+The biggest gotcha is that func must be a nn.Module when using the adjoint method. This is used to collect parameters of the differential equation.
 
 ## Prerequisites
 
@@ -39,7 +60,7 @@ If you use this code, please cite the related paper and repository:
     doi={10.48550/arXiv.2311.07849}
 
     @article{masieinav2023repo,
-    title={{\texttt{NICE: Neural integration for constitutive equations}}},
+    title={`NICE: Neural integration for constitutive equations`},
     author={Masi, Filippo and Einav, Itai},
     year={2023},
     url={https://github.com/filippo-masi/NICE}
