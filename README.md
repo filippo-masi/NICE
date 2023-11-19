@@ -2,55 +2,25 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 <center><img src="./_images/NICE.png"  alt="centered image" width="100%" height="51.15%"></center>
 
-## Description
+## Overview
 
-Welcome to the Novel Method repository! This repository houses an innovative approach to <briefly describe what your method does>. Our method leverages <key features or technologies> to achieve <unique benefits or results>. Whether you're a researcher, developer, or enthusiast, feel free to explore, experiment, and contribute to our novel solution.  ([Masi, Stefanou, 2022](https://doi.org/10.1016/j.cma.2022.115190)) to generate data for training Thermdoynamics-based Artificial Neural Networks and their validation.
+The **NICE** (Neural Integration for Constitutive Equations) method is a novel deep learning tool for the automatic discovery of constitutive equations from small data - partial and incomplete material state observations. 
+The approach builds upon the solution of the initial value problem describing the time evolution of the material state and leverages the framework provided by neural differentials equations (Chen et al., 2018).
+NICE can learn accurate, consistent, and robust constitutive models from incomplete, sparse, and noisy data collecting simple conventional experimental protocols. 
 
 ## Features
 
-- **Innovative Approach:** Utilizes a novel method to address <specific problem or challenge>.
-- **Performance:** Achieves superior results compared to existing methods in terms of <performance metric>.
-- **Flexibility:** Easily adaptable to different scenarios and applications.
-
-## Getting Started
+- **Neural Network Architecture**: Utilizes feed-forward artificial neural networks to model the evolution of constitutive equations.
+- **Normalization**: Implements robust data normalization techniques for enhanced training performance.
+- **ODE Integration**: Solves ordinary differential equations (ODEs) efficiently using the `torchdiffeq` library.
+- **Early Stopping**: Includes early stopping functionality to prevent overfitting during training.
 
 ### Prerequisites
 
 - Python 3.6+
 - PyTorch
-
-
-
-##### Usage
-
-- The file ``` lattice_material.py ``` contains the classes for the constructor, assembly of lattice structures, and FE solver (Newton's method).
-- ``` lattice_prescribed_path.py ``` contains the script for running the FE analysis of a lattice material unit cell, with periodic boundary conditions, given a prescribed strain increment path.
-  - Constructor parameters: ```xmax, ymax, zmax``` are the total dimensions of the unit cell; ```nx, ny, nz``` are the number of nodes along each direction, and ```s``` is the magnitude of the perturbation (uniform spatial distribution) of the nodal coordinates
-  - Boundary conditions: Dirichlet, Neumann, and periodic boundary conditions are implemented. The call is
-    ```sh
-    BC = [nodal_degree,value,"type"]
-    ```
-    with ```nodal_degree``` being the degree of freedom of a particular node (i.e., node's index in ```node_coordinates``` times 3 plus 3), ```value``` the prescribed value, and ```type``` the type of boundary condition ```"DC"``` for Dirichlet, ```"NM"``` for Neumann, ```"PR"``` for periodic.
-- ``` lattice_data_gen.py ``` contains the script for running the data generation, with periodic boundary conditions, given a prescribed strain increment path.
-- ``` lattice_torsional.py ``` contains the script for running the FE analysis of a lattice structure with fixed bottom end and imposed torsional displacement (see [Masi, Stefanou, 2022](https://doi.org/10.1016/j.cma.2022.115190)).
-
-### 2. Multiscale simulation with TANN - ``` TANN - Numerical Geolab ```
-
-Hands-on: employ TANN as a user-material to perform Finite Element analyses [using Numerical Geolab, 2].
-The application consists of a 3D model subjected to torsional deformations. The material used represents the volume average behavior of a lattice microstructure with bars displaying elasto-plastic rate-independent behavior, with von Mises yield criterion, and kinematic hardening. For more, we refer to [1,2].
-
-
-<img src="./TANN - Numerical Geolab/_images/displacement_vertical_AI.png"  width="25%" height="20%">
-
-         Torsional warping: vertical displacement field due to a torsional deformation. The displacement fields were exported with the help of the third party software Paraview.
-
-
-IMPORTANT: For running part of the script for the multiscale simulations, Numerical Geolab [2] software is needed. The software is currently under review and will be uploaded online soon.
-For more information, [contact me](mailto:filippo.masi@sydney.edu.au)
-
 
 
 ### References
