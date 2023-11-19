@@ -1,5 +1,8 @@
 ## Neural integration for constitutive equations
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 <center><img src="./_images/NICE.png"  alt="centered image" width="100%" height="51.15%"></center>
 
 ## Description
