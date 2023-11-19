@@ -1,4 +1,4 @@
-## Multiscale modeling of inelastic materials with Thermodynamics-based Artificial Neural Networks (TANN)
+## Neural integration for constitutive equations
 
 <center><img src="./_images/NICE.png"  alt="centered image" width="100%" height="51.15%"></center>
 
