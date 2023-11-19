@@ -65,9 +65,9 @@ where `params_f` and `params_u` are the parameters used to construct the evoluti
 
 If you found this library useful in your research, please consider citing.
 
-    @article{masieinav2023repo,
+    @article{NICE2023repo,
     title={`NICE: Neural integration for constitutive equations`},
-    author={Masi, Filippo and Einav, Itai},
+    author={Masi, Filippo},
     year={2023},
     url={https://github.com/filippo-masi/NICE}
 
