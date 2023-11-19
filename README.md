@@ -24,7 +24,7 @@ import torch
 from nice_module import NICE
 
 # Initialize NICE model
-nice_model = NICE(params_f, params_u, hidden_num, number_IC, norm_params, dim, nsvars)
+nice_model = NICE(params_f, params_u, number_IC, norm_params, dim, nsvars)
 
 # Generate sample data
 t = np.linspace(0, 10, 100)
@@ -35,24 +35,13 @@ u = ... # strain protocol
 result, stress, d = nice_model.integrate(u, y0, t)
 ```
 
-odeint(func, y0, t)
-where func is any callable implementing the ordinary differential equation f(t, x), y0 is an any-D Tensor representing the initial values, and t is a 1-D Tensor containing the evaluation points. The initial time is taken to be t[0].
-
-Backpropagation through odeint goes through the internals of the solver. Note that this is not numerically stable for all solvers (but should probably be fine with the default dopri5 method). Instead, we encourage the use of the adjoint method explained in [1], which will allow solving with as many steps as necessary due to O(1) memory usage.
-
-To use the adjoint method:
-
-from torchdiffeq import odeint_adjoint as odeint
-
-odeint(func, y0, t)
-odeint_adjoint simply wraps around odeint, but will use only O(1) memory in exchange for solving an adjoint ODE in the backward call.
-
-The biggest gotcha is that func must be a nn.Module when using the adjoint method. This is used to collect parameters of the differential equation.
+where `params_f` and `params_u` are the parameters used to construct the evolution equation and internal energy network, respectively; `number_IC` is the number of initial conditions in case of multiple loading paths tested at the same time (the method is parallelized based on tensorial calculation); `norm_params` is the list of normalization parameters; `dim` is the dimensional space (in 2D `dim=2`, in 3D `dim=3`); and `nsvars` is the number of state variables (`nsvars=1` means the method only uses the elastic strain, while if `nsvars>1` then also mass density and dissipative state variables are accounted for).
 
 ## Prerequisites
 
 - Python 3.6+
 - PyTorch
+- torchdiffeq
 
 
 ## References
