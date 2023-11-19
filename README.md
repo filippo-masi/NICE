@@ -39,14 +39,12 @@ where `params_f` and `params_u` are the parameters used to construct the evoluti
 
 ## Prerequisites
 
-- Python 3.6+
-- PyTorch
+- python 3.6+
+- pyTorch
 - torchdiffeq
 
 
 ## References
-
-If you use this code, please cite the related paper and repository:
 
 [1] F Masi, I Einav (2023). "[Neural integration for constitutive equations using small data](https://doi.org/10.48550/arXiv.2311.07849)". arXiv preprint: 2311.07849.
 
@@ -56,16 +54,20 @@ If you use this code, please cite the related paper and repository:
     journal={arXiv preprint 2311.07849},
     year={2023},
     doi={10.48550/arXiv.2311.07849}
-
-    @article{masieinav2023repo,
-    title={`NICE: Neural integration for constitutive equations`},
-    author={Masi, Filippo and Einav, Itai},
-    year={2023},
-    url={https://github.com/filippo-masi/NICE}
     
 [2] A Paszke, S Gross, S Chintala, G Chanan, E Yang, Z DeVito, Z Lin, A Desmaison, L Antiga, and A Lerer. Automatic differentiation in PyTorch. 2017.
 
 [3] R TQ Chen. `torchdiffeq`, 2018. url: [https://github.com/rtqichen/torchdiffeq](https://github.com/rtqichen/torchdiffeq).
 
 [4] R TQ Chen, Y Rubanova, J Bettencourt, and D K Duvenaud. Neural ordinary differential equations. Advances in neural information processing systems, 31, 2018. doi: 10.48550/arXiv.1806.07366.
+
+---
+
+If you found this library useful in your research, please consider citing.
+
+    @article{masieinav2023repo,
+    title={`NICE: Neural integration for constitutive equations`},
+    author={Masi, Filippo and Einav, Itai},
+    year={2023},
+    url={https://github.com/filippo-masi/NICE}
 
