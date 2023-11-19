@@ -52,24 +52,22 @@ For more information, [contact me](mailto:filippo.masi@sydney.edu.au)
 
 ### References
 
-If you use this code, please cite the related papers:
+If you use this code, please cite the related paper and repository:
 
-[1] F Masi, I Stefanou (2022). "[Multiscale modeling of inelastic materials with Thermodynamics-based Artificial Neural Networks (TANN)](https://doi.org/10.1016/j.cma.2022.115190)". Computer Methods in Applied Mechanics and Engineering 398, 115190.
+[1] F Masi, I Einav (2023). "[Neural integration for constitutive equations using small data](https://doi.org/10.48550/arXiv.2311.07849)". arXiv preprint: 2311.07849.
 
-[2] Stathas, A. and Stefanou, I., 2022. Numerical Geolab, FEniCS for inelasticity. The FEniCS Conference.
+[2] F Masi, I Einav (2023), "[```NICE: Neural integration for constitutive equations```](https://github.com/filippo-masi/NICE)"
 
-    @article{masi2022multiscale,
-    title={Multiscale modeling of inelastic materials with Thermodynamics-based Artificial Neural Networks (TANN)},
-    author={Masi, Filippo and Stefanou, Ioannis},
-    journal={Computer Methods in Applied Mechanics and Engineering},
-    volume={398},
-    pages={115190},
-    year={2022},
-    publisher={Elsevier},
-    doi={10.1016/j.cma.2022.115190}
 
-[![Alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.arc.gov.au%2F&psig=AOvVaw0vWT9tRDqbraBojO4K9ETg&ust=1700456130911000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCJDEh--iz4IDFQAAAAAdAAAAABAQ
-)]([https://digitalocean.com](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.arc.gov.au%2F&psig=AOvVaw0vWT9tRDqbraBojO4K9ETg&ust=1700456130911000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCJDEh--iz4IDFQAAAAAdAAAAABAQ
-)https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.arc.gov.au%2F&psig=AOvVaw0vWT9tRDqbraBojO4K9ETg&ust=1700456130911000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCJDEh--iz4IDFQAAAAAdAAAAABAQ
-)
+    @article{masieinav2023,
+    title={Neural integration for constitutive equations using small data},
+    author={Masi, Filippo and Einav, Itai},
+    journal={arXiv preprint 2311.07849},
+    year={2023},
+    doi={[10.48550/arXiv.2311.07849](https://doi.org/10.48550/arXiv.2311.07849)}
 
+    @article{masieinav2023repo,
+    title={{\texttt{NICE: Neural integration for constitutive equations}}},
+    author={Masi, Filippo and Einav, Itai},
+    year={2023},
+    doi={[filippo-masi/NICE](https://github.com/filippo-masi/NICE)}
