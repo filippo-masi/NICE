@@ -71,3 +71,6 @@ If you found this library useful in your research, please consider citing.
     year={2023},
     url={https://github.com/filippo-masi/NICE}
 
+## Acknowledgments
+
+The authors would like to acknowledge the support of the Australia Research Council (ARC) under the Discovery Projects scheme (Grant agreement ID DP220101164: “Physics-informed hydrodynamic model for clay across scales”).
