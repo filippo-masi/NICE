@@ -14,7 +14,7 @@ NICE can learn accurate, consistent, and robust constitutive models from incompl
 
 ## Basic usage
 
-This library provides one main interface `NICE` which contains general-material algorithms for solving the initial value problems associated with the time evolution of the material state. 
+This library provides one main interface `NICE` which contains algorithms for solving the initial value problems associated with the time evolution of the material state and learn from sparse and incomplete material state observations. 
 
 To call the method:
 
@@ -70,7 +70,3 @@ If you found this library useful in your research, please consider citing.
     author={Masi, Filippo},
     year={2023},
     url={https://github.com/filippo-masi/NICE}
-
-## Acknowledgments
-
-The authors would like to acknowledge the support of the Australia Research Council (ARC) under the Discovery Projects scheme (Grant agreement ID DP220101164: “Physics-informed hydrodynamic model for clay across scales”).
