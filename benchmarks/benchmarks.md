@@ -11,12 +11,12 @@ Two benchmarks are selected to highlight challenges in learning constitutive rep
 The entire data set is split into training, validation, and test sets in approximately a 60-20-20% ratio.
 
 ## Implementation Details
-The new algorithm is implemented using the deep learning library **PyTorch** [^1] and the package **torchdiffeq** [^2] for time integration and back-propagation. The explicit midpoint method is used with a time step \(h = \frac{T}{800}\).
+The new algorithm is implemented using the deep learning library **PyTorch** and the package **torchdiffeq** for time integration and back-propagation. The explicit midpoint method is used with a time step \(h = \frac{T}{800}\).
 
 
 ## Benchmark 1: elasto-plastic media
 ### Model Description
-The first example concerns an incrementally nonlinear elasto-plastic, non-associative, Drucker-Prager material with constant density [^3]. The specific internal energy is defined as:
+The first example concerns an incrementally nonlinear elasto-plastic, non-associative, Drucker-Prager material with constant density [1]. The specific internal energy is defined as:
 
 $\hat{u}(\boldsymbol{\varepsilon^e}) = \dfrac{1}{2}K{\varepsilon_v^e}^2 + \dfrac{3}{2}G{\varepsilon^e_s}^2$
 
@@ -32,7 +32,7 @@ The neural operator $f_{\boldsymbol{\theta}}$ is composed of three hidden layers
 
 ## Benchmark 2: elasto-plastic porous media
 ### Model Description
-The second example concerns elasto-plastic porous media [^4]. The reference constitutive model is built on three state variables: elastic strain ($\boldsymbol{\varepsilon}^e$), bulk density ($\rho$), and solid fraction ($\phi=\frac{\rho}{\rho_s}$).
+The second example concerns elasto-plastic porous media [2]. The reference constitutive model is built on three state variables: elastic strain ($\boldsymbol{\varepsilon}^e$), bulk density ($\rho$), and solid fraction ($\phi=\frac{\rho}{\rho_s}$).
 
 ### Model Parameters
 Bulk modulus $K=10$ MPa, shear modulus $G=6$ MPa, critical state line slope $M=1.5$, effective isotropic yield pressure $\beta^*=0.1$, and unstressed solid density $\rho_s^*=600$ kg/m³.
@@ -47,7 +47,5 @@ The neural operator $f_{\boldsymbol{\theta}}$ is composed of three hidden layers
 Refer to the repository for loading paths and protocols diagrams.
 
 ## References
-[^1]: [PyTorch](https://pytorch.org/)  
-[^2]: [torchdiffeq](https://github.com/rtqichen/torchdiffeq)  
-[^3]: I Einav. The unification of hypo-plastic and elasto-plastic theories. *International Journal of Solids and Structures*, 49(11-12):1305–1315, 2012. doi: 10.1016/j.ijsolstr.2012.02.003.
-[^4]: D Riley, I Einav, and F Guillard. A constitutive model for porous media with recurring stress drops: From snow to foams and cereals. *International Journal of Solids and Structures*, 262:112044, 2023. doi: 10.1016/j.ijsolstr.2022.112044.
+[1]: I Einav. The unification of hypo-plastic and elasto-plastic theories. *International Journal of Solids and Structures*, 49(11-12):1305–1315, 2012. doi: 10.1016/j.ijsolstr.2012.02.003.
+[2]: D Riley, I Einav, and F Guillard. A constitutive model for porous media with recurring stress drops: From snow to foams and cereals. *International Journal of Solids and Structures*, 262:112044, 2023. doi: 10.1016/j.ijsolstr.2022.112044.
