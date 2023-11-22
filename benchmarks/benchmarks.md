@@ -5,7 +5,7 @@ The accuracy and capability of the developed approach are evaluated using synthe
 To mimic idealized experiments, numerical data sets for training, validation, and testing are generated using standard protocols in experimental mechanics. For each protocol, stress values and dissipative state variables are sampled at regular intervals. Additionally, the approach's robustness to errors in the training data is assessed by introducing synthetic noise.
 
 ## Benchmarks Selection
-Two benchmarks are selected to highlight challenges in learning constitutive representations in small data regimes: a one-state variable model (\(\bm{\varepsilon}^e\)) and a three-state variables model (\(\rho, \bm{\varepsilon}^e, \mathbf{z}\)).
+Two benchmarks are selected to highlight challenges in learning constitutive representations in small data regimes: a one-state variable model (\($\boldsymbol{\varepsilon}^e$\)) and a three-state variables model (\(\rho, \bm{\varepsilon}^e, \mathbf{z}\)).
 
 ## Data Splitting
 The entire data set is split into training, validation, and test sets in approximately a 60-20-20% ratio.
