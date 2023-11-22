@@ -48,4 +48,5 @@ Refer to the repository for loading paths and protocols diagrams.
 
 ## References
 [1]: I Einav. The unification of hypo-plastic and elasto-plastic theories. *International Journal of Solids and Structures*, 49(11-12):1305–1315, 2012. doi: 10.1016/j.ijsolstr.2012.02.003.
+
 [2]: D Riley, I Einav, and F Guillard. A constitutive model for porous media with recurring stress drops: From snow to foams and cereals. *International Journal of Solids and Structures*, 262:112044, 2023. doi: 10.1016/j.ijsolstr.2022.112044.
