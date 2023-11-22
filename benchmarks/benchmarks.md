@@ -31,7 +31,7 @@ The neural operator ${f}_{\boldsymbol{\theta}}$ is composed of three hidden laye
 
 ## Benchmark 2: elasto-plastic porous media
 ### Model Description
-The second example concerns elasto-plastic porous media [^4]. The reference constitutive model is built on three state variables: elastic strain ($\boldsymbol{\varepsilon}^e$), bulk density ($\rho$), and solid fraction ($\phi=\rho/\rho_s$).
+The second example concerns elasto-plastic porous media [^4]. The reference constitutive model is built on three state variables: elastic strain ($\boldsymbol{\varepsilon}^e$), bulk density ($\rho$), and solid fraction ($\phi=\frac{\rho}{\rho_s}$).
 
 ### Model Parameters
 Bulk modulus $K=10$ MPa, shear modulus $G=6$ MPa, critical state line slope $M=1.5$, effective isotropic yield pressure $\beta^*=0.1$, and unstressed solid density $\rho_s^*=600$ kg/m³.
